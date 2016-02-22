@@ -68,9 +68,9 @@ class RaffleController extends Controller
 
         //now calculate result -single or multiple
         if($raffle->winners == 0)
-            $raffle->result = json_encode($this->random_single($raffle->min,$raffle->max));
+            $raffle->result = $this->random_single($raffle->min,$raffle->max);
         else{
-            $raffle->result = json_encode($this->multi_vals($raffle->min,$raffle->max, $raffle->winners));
+            $raffle->result = $this->multi_vals($raffle->min,$raffle->max, $raffle->winners);
         }
         $raffle->save();
 
