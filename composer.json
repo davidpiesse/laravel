@@ -57,6 +57,7 @@
       "php artisan clear-compiled"
     ],
     "post-update-cmd": [
+      "php artisan dump-autoload",
       "php artisan optimize"
     ]
   },
