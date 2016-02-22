@@ -156,11 +156,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-//        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-//        Laracasts\Flash\FlashServiceProvider::class,
-//        Barryvdh\Debugbar\ServiceProvider::class,
-//        Vinkla\Hashids\HashidsServiceProvider::class,
-//        Sofa\Eloquence\ServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Vinkla\Hashids\HashidsServiceProvider::class,
+        Sofa\Eloquence\ServiceProvider::class,
     ],
 
     /*
@@ -206,9 +206,9 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-//        'Flash'     => Laracasts\Flash\Flash::class,
-//        'Debugbar' => Barryvdh\Debugbar\Facade::class,
-//        'Hashids' => Vinkla\Hashids\Facades\Hashids::class
+        'Flash'     => Laracasts\Flash\Flash::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Hashids' => Vinkla\Hashids\Facades\Hashids::class
 
     ],
 
