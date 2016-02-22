@@ -29,7 +29,6 @@ class RaffleController extends Controller
             'max_winners' => 'required|integer|min:0|max:999999',
             'comment' => 'string|between:0,255'
         ]);
-
         dd($request->all());
         //get request
         //validate the data
