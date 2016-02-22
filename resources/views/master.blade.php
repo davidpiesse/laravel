@@ -48,7 +48,7 @@
                 {{--</li>--}}
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href=""><i class="fa fa-fw fa-clock-o"></i> {{\Carbon\Carbon::now()->toDayDateTimeString()}}</a>
+                <li><a href=""><i class="fa fa-fw fa-clock-o"></i> {{\Carbon\Carbon::now()->format('D j M Y H:i:s e')}}</a>
                 </li>
                 <li><a href=""><small>{{env('APP_VERSION','0.?')}}</small></a></li>
             </ul>

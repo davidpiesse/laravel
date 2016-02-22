@@ -81,7 +81,7 @@
                             <i class="fa fa-fw fa-ticket"></i> Run the Draw!
                         </button>
                         <br>
-                        <span class="text-success"><small><em><i class="fa fa-fw fa-clock-o"></i> {{\Carbon\Carbon::now()->toDayDateTimeString()}}</em></small></span>
+                        <span class="text-success"><small><em><i class="fa fa-fw fa-clock-o"></i> {{\Carbon\Carbon::now()->toAtomString()}}</em></small></span>
                     </div>
                 </div>
             </form>
