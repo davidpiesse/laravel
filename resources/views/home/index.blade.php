@@ -69,7 +69,7 @@
                         <i class="fa fa-fw fa-pencil"></i>
                     </label>
                     <div class="col-sm-10">
-                        <input type="text" data-maxlength="255" class="form-control input-md" id="comment"
+                        <input type="text" data-max-length="255" class="form-control input-md" id="comment"
                                name="comment" placeholder="Enter a comment if you want to"/>
                         <div class="help-block with-errors"></div>
                     </div>

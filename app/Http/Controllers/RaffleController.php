@@ -27,7 +27,7 @@ class RaffleController extends Controller
             'min_number' => 'required|integer|min:0|max:999999',
             'max_number' => 'required|integer|min:0|max:999999',
             'max_winners' => 'required|integer|min:0|max:999999',
-            'comment' => 'required|string'
+            'comment' => 'string|between:0,255'
         ]);
 
         dd($request->all());
