@@ -15,12 +15,21 @@ class RaffleController extends Controller
     public function show($hash)
     {
         $id = Hashids::decode($hash);
-        $raffle = Raffle::firstOrFail($id);
+        mysql_get_server_info();
+        $raffle = Raffle::findOrFail($id);
         return view('raffle.show',compact('raffle'));
     }
 
     public function widget($hash){
         //show a widget version of the result
+    }
+
+    public function raffles_by_ip($ip){
+        //all raffles by an IP address
+    }
+
+    public function raffles_by_timeframe($start,$end){
+        //all raffles in a time period
     }
 
     public function create(Request $request)
@@ -55,7 +64,7 @@ class RaffleController extends Controller
         $raffle->request_time = $current_dt;
         $raffle->microtime = microtime(false);
         $raffle->user_ip = $user_ip;
-
+        //initial save
         $raffle->save();
 
         //now calculate result -single or multiple
@@ -71,8 +80,6 @@ class RaffleController extends Controller
         //create raffle object
         //save raffle object
         //return raffle object page
-
-        dd($raffle);
         return $this->show($hash);
     }
 
