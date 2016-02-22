@@ -24,8 +24,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
-        //
-
+        $router->pattern('id', '[0-9]+');
+        $router->pattern('hash', '[a-z0-9]{6}');
         parent::boot($router);
     }
 
