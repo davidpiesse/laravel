@@ -49,13 +49,16 @@ class RaffleController extends Controller
         $raffle->max = $max;
         $raffle->winners = $winners;
         $raffle->comment = $comment;
+        $raffle->type = 'raffle';
         $raffle->random_seed = $random_seed;
+//        $raffle->code = Hashids::connection('validator')->encode($raffle->random_seed);
         $raffle->request_time = $current_dt;
+        $raffle->microtime = microtime(false);
         $raffle->user_ip = $user_ip;
 
         $raffle->save();
 
-        //now calculate result
+        //now calculate result -single or multiple
         if($raffle->winners == 0)
             $raffle->result = json_encode($this->random_single($raffle->min,$raffle->max));
         else{

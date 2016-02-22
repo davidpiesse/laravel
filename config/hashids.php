@@ -38,15 +38,15 @@ return [
     'connections' => [
 
         'main' => [
-            'salt' => 'VaEzhj7kIuZ10CrQU10bcW7g6oWI0BA2',
+            'salt' => env('HASH_MAIN_SALT'),
             'length' => '6',
             'alphabet' => 'qwertyuioplkjhgfdsazxcvbnm1234567890',
         ],
 
-        'alternative' => [
-            'salt' => 'your-salt-string',
-            'length' => 'your-length-integer',
-            'alphabet' => 'your-alphabet-string',
+        'validator' => [
+            'salt' => env('HASH_ALT_SALT'),
+            'length' => '8',
+            'alphabet' => 'qwertyuioplkjhgfdsazxcvbnm1234567890',
         ],
 
     ],
