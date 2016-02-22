@@ -23,6 +23,13 @@ class RaffleController extends Controller
 
     public function create(Request $request)
     {
+        $this->validate($request,[
+            'min_number' => 'required|integer|min:0|max:999999',
+            'max_number' => 'required|integer|min:0|max:999999',
+            'max_winners' => 'required|integer|min:0|max:999999',
+            'comment' => 'required|string'
+        ]);
+
         dd($request->all());
         //get request
         //validate the data
