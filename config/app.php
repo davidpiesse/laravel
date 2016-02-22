@@ -160,6 +160,7 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Vinkla\Hashids\HashidsServiceProvider::class,
+        Sofa\Eloquence\ServiceProvider::class,
     ],
 
     /*
