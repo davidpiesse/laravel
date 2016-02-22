@@ -157,7 +157,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
 //        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        Laracasts\Flash\FlashServiceProvider::class,
+//        Laracasts\Flash\FlashServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Vinkla\Hashids\HashidsServiceProvider::class,
         Sofa\Eloquence\ServiceProvider::class,
