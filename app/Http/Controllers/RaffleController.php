@@ -90,7 +90,6 @@ class RaffleController extends Controller
     private function multi_vals($min, $max, $number)
     {
         $array = range($min, $max);
-
         $order = array_map(create_function('$val', 'return mt_rand();'), range(1, count($array)));
         array_multisort($order, $array);
         return array_slice($array, 0, $number);

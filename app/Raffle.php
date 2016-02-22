@@ -8,8 +8,8 @@ class Raffle extends Model
 {
     // raffle object
     //not much here
-//    protected $casts = [
-//        'result' => 'json',
-//        'config' => 'json',
-//    ];
+    protected $casts = [
+        'result' => 'json',
+        'config' => 'json',
+    ];
 }
