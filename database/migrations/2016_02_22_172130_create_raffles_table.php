@@ -21,10 +21,10 @@ class CreateRafflesTable extends Migration
             $table->integer('max')->default(20);
             $table->integer('winners')->default(1);
             $table->text('comment')->nullable();
-            $table->json('config')->nullable();
+            $table->text('config')->nullable();
             $table->bigInteger('microtime')->nullable();
             $table->dateTimeTz('request_time');
-            $table->json('result');
+            $table->text('result');
             $table->text('user_ip');
         });
     }
