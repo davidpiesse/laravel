@@ -19,6 +19,11 @@
             padding-top: 70px;
             /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
         }
+
+        nav {
+            background-image: url("pattern.png");
+        }
+
     </style>
 
     <!--[if lt IE 9]>
