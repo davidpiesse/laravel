@@ -36,7 +36,7 @@
                     </label>
                     <div class="col-sm-10">
                         <input type="number" min="1" max="999999" data-min_max_val="min_max_val"
-                               class="form-control input-lg" id="min_number" name="min_number" value="1" required/>
+                               class="form-control input-md" id="min_number" name="min_number" value="1" required/>
                         <div class="help-block with-errors"></div>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                         End Number <span class="text-danger">*</span> <i class="fa fa-fw fa-sort-down"></i>
                     </label>
                     <div class="col-sm-10">
-                        <input type="number" max="999999" data-min_max_val="min_max_val" class="form-control input-lg"
+                        <input type="number" max="999999" data-min_max_val="min_max_val" class="form-control input-md"
                                id="max_number" name="max_number" value="20" required/>
                         <div class="help-block with-errors"></div>
                     </div>
@@ -57,7 +57,7 @@
                         No. of Winners <span class="text-danger">*</span> <i class="fa fa-fw fa-ticket"></i>
                     </label>
                     <div class="col-sm-10">
-                        <input type="number" max="999999" data-win_max_val="win_max_val" class="form-control input-lg"
+                        <input type="number" max="999999" data-win_max_val="win_max_val" class="form-control input-md"
                                id="max_winners" name="max_winners" value="1" required/>
                         <div class="help-block with-errors"></div>
                     </div>
