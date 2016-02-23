@@ -20,7 +20,7 @@ class CreateRafflesTable extends Migration
             $table->integer('min')->default(0);
             $table->integer('max')->default(20);
             $table->integer('winners')->default(1);
-            $table->text('comment')->nullable();
+            $table->string('comment',50)->nullable();
             $table->text('config')->nullable();
             $table->bigInteger('microtime')->nullable();
             $table->dateTimeTz('request_time');

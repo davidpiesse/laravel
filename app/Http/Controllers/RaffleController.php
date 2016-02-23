@@ -16,6 +16,7 @@ class RaffleController extends Controller
     {
         $id = Hashids::decode($hash);
         $raffle = Raffle::find($id[0]);
+        $raffle->hash = $hash;
         return view('raffle.show',compact('raffle'));
     }
 
@@ -37,7 +38,7 @@ class RaffleController extends Controller
             'min_number' => 'required|integer|min:0|max:999999',
             'max_number' => 'required|integer|min:0|max:999999',
             'max_winners' => 'required|integer|min:0|max:999999',
-            'comment' => 'string|between:0,255'
+            'comment' => 'string|between:0,50'
         ]);
         //get request
         $min = $request->min_number;
@@ -46,10 +47,11 @@ class RaffleController extends Controller
         $comment = $request->comment;
         $current_dt = Carbon::now();
         $user_ip = request()->ip();
-        //make andom seed
+        //make random seed
         $random_seed = random_int(100000000,999999999);
         //setup random seed for this request
-        mt_srand($random_seed);
+        $faker = \Faker\Factory::create();
+        $faker->seed($random_seed);
 
         //create object
         $raffle = new Raffle();
@@ -67,31 +69,19 @@ class RaffleController extends Controller
         $raffle->save();
 
         //now calculate result -single or multiple
-        if($raffle->winners == 0)
-            $raffle->result = $this->random_single($raffle->min,$raffle->max);
+        if($raffle->winners == 1)
+            $raffle->result = $faker->numberBetween($raffle->min, $raffle->max);
         else{
-            $raffle->result = $this->multi_vals($raffle->min,$raffle->max, $raffle->winners);
+            $raffle->result = $faker->randomElements(range($raffle->min, $raffle->max),$raffle->winners);
         }
         $raffle->save();
 
         $hash = Hashids::encode($raffle->id);
+
         //validate the data
         //create raffle object
         //save raffle object
         //return raffle object page
         return $this->show($hash);
-    }
-
-    private function random_single($min,$max){
-        //get a single random value
-        return mt_rand($min,$max);
-    }
-
-    private function multi_vals($min, $max, $number)
-    {
-        $array = range($min, $max);
-        $order = array_map(create_function('$val', 'return mt_rand();'), range(1, count($array)));
-        array_multisort($order, $array);
-        return array_slice($array, 0, $number);
     }
 }
