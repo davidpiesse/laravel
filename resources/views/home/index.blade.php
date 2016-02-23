@@ -35,8 +35,8 @@
                        Start Number <span class="text-danger">*</span> <i class="fa fa-fw fa-sort-up"></i>
                     </label>
                     <div class="col-sm-10">
-                        <input type="number" min="0" max="999999" data-min_max_val="min_max_val"
-                               class="form-control input-lg" id="min_number" name="min_number" value="0" required/>
+                        <input type="number" min="1" max="999999" data-min_max_val="min_max_val"
+                               class="form-control input-lg" id="min_number" name="min_number" value="1" required/>
                         <div class="help-block with-errors"></div>
                     </div>
                 </div>
