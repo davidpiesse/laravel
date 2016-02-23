@@ -82,6 +82,7 @@ class RaffleController extends Controller
         //create raffle object
         //save raffle object
         //return raffle object page
-        return $this->show($hash);
+        return redirect()->route('raffle.show',$hash);
+//        return $this->show($hash);
     }
 }
