@@ -5,8 +5,11 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/',['as'=>'home.index','uses'=>'HomeController@index']);
-    Route::post('/',['as'=>'raffle.create','uses'=>'RaffleController@create']);
-    // 1de9b7
-    Route::get('/{hash}',['as'=>'raffle.show','uses'=>'RaffleController@show']);
+    Route::get('/', ['as' => 'home.index', 'uses' => 'HomeController@index']);
+    Route::group(['middleware' => 'throttle:10'], function () { //10 in 60 seconds
+        Route::post('/', ['as' => 'raffle.create', 'uses' => 'RaffleController@create']);
+    });
+    Route::get('/{hash}', ['as' => 'raffle.show', 'uses' => 'RaffleController@show']);
+    Route::get('/w/{hash}', ['as' => 'raffle.show.image', 'uses' => 'RaffleController@show_image']);
+    Route::get('/user/{hash}', ['as' => 'user.raffle.list', 'uses' => 'RaffleController@raffles_by_ip']);
 });

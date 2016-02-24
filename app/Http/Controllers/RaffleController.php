@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers;
 use App\Raffle;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -12,20 +13,31 @@ use Vinkla\Hashids\Facades\Hashids;
 
 class RaffleController extends Controller
 {
-    public function show($hash)
+    public function show($hash, $showImage = false)
     {
         $id = Hashids::decode($hash);
         $raffle = Raffle::find($id[0]);
         $raffle->hash = $hash;
-        return view('raffle.show',compact('raffle'));
+        return view('raffle.show',compact('raffle','showImage'));
+    }
+
+    public function show_image($hash){
+        //show raffle page but with a image included
+        return $this->show($hash,true);
     }
 
     public function widget($hash){
         //show a widget version of the result
     }
 
-    public function raffles_by_ip($ip){
-        //all raffles by an IP address
+    public function raffles_by_ip($hash){
+        $ipAddress = Helpers::decodeIP($hash);
+        if(count($ipAddress) > 1)
+            $ipAddress = implode('.',$ipAddress);
+        else
+            $ipAddress = '::1';
+        $raffles = Raffle::where('user_ip',$ipAddress)->orderBy('request_time','desc')->get();
+        return view('user.show',compact('ipAddress','raffles','hash'));
     }
 
     public function raffles_by_timeframe($start,$end){

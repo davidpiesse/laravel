@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f7f28b38744d951caa3642acbcf96dc8",
-    "content-hash": "9af5b4700ab4bf4f6964575afd7be689",
+    "hash": "958030078403b34efa2c47e1ffee68ef",
+    "content-hash": "d3447d427a0e090b097272860d0a63d3",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -616,6 +616,54 @@
                 "youtube"
             ],
             "time": "2016-01-21 04:26:38"
+        },
+        {
+            "name": "irazasyed/laravel-identicon",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/irazasyed/laravel-identicon.git",
+                "reference": "86dba3ab45a34f3081e01e73a921572851a4831e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/irazasyed/laravel-identicon/zipball/86dba3ab45a34f3081e01e73a921572851a4831e",
+                "reference": "86dba3ab45a34f3081e01e73a921572851a4831e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~4.1|~5.0",
+                "php": ">=5.4.0",
+                "yzalis/identicon": "~1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Irazasyed\\LaravelIdenticon\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Syed I.R",
+                    "email": "syed@lukonet.com"
+                }
+            ],
+            "description": "Laravel Identicon Package - Extends Identicon Library and Adds Support for Seamless Usage with Laravel 4/5.",
+            "homepage": "http://irazasyed.github.io/laravel-identicon/",
+            "keywords": [
+                "Laravel 4",
+                "avatar",
+                "identicon",
+                "image",
+                "laravel",
+                "laravel 5",
+                "laravel identicon"
+            ],
+            "time": "2015-02-27 04:13:41"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -1728,6 +1776,63 @@
             "time": "2016-02-17 23:32:34"
         },
         {
+            "name": "spatie/laravel-backup",
+            "version": "2.9.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-backup.git",
+                "reference": "500636666443bccac9447eae0417551f2841c857"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/500636666443bccac9447eae0417551f2841c857",
+                "reference": "500636666443bccac9447eae0417551f2841c857",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "5.*",
+                "illuminate/support": "5.*",
+                "php": "^5.4.0|^7.0",
+                "symfony/finder": "^2.6|^3.0"
+            },
+            "require-dev": {
+                "laravel/framework": "5.*",
+                "mockery/mockery": "0.9.*",
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Backup\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://murze.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Backup command for Laravel 5 applications",
+            "homepage": "https://github.com/spatie/laravel-backup",
+            "keywords": [
+                "backup",
+                "database",
+                "laravel 5",
+                "laravel-backup",
+                "mysql",
+                "spatie"
+            ],
+            "time": "2016-01-08 19:41:17"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v5.4.1",
             "source": {
@@ -2721,6 +2826,56 @@
                 "environment"
             ],
             "time": "2015-12-29 15:10:30"
+        },
+        {
+            "name": "yzalis/identicon",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yzalis/Identicon.git",
+                "reference": "a99fc2a3d018512f7914bc6f972952536c0f309b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yzalis/Identicon/zipball/a99fc2a3d018512f7914bc6f972952536c0f309b",
+                "reference": "a99fc2a3d018512f7914bc6f972952536c0f309b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "fzaninotto/faker": "1.2.*@dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Identicon": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Laugueux",
+                    "email": "benjamin@yzalis.com"
+                }
+            ],
+            "description": "Create awesome unique avatar.",
+            "homepage": "http://identicon-php.org",
+            "keywords": [
+                "avatar",
+                "identicon",
+                "image"
+            ],
+            "time": "2014-07-13 09:19:12"
         }
     ],
     "packages-dev": [

@@ -43,6 +43,12 @@ return [
             'alphabet' => 'qwertyuioplkjhgfdsazxcvbnm1234567890',
         ],
 
+        'iphasher' => [
+            'salt' => env('HASH_IP_SALT'),
+            'length' => '6',
+            'alphabet' => 'qwertyuioplkjhgfdsazxcvbnm1234567890',
+        ],
+
         'validator' => [
             'salt' => env('HASH_ALT_SALT'),
             'length' => '8',

@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="A raffle winner random generator">
+    <meta name="author" content="David Piesse">
+    <meta name="keywords" content="RaffleDraw,raffle,random,generator,draw,piesse,mapdev">
     <title>@yield('title', 'RaffleDraw')</title>
 
     <!-- Bootstrap Core CSS -->
@@ -21,9 +22,10 @@
         }
 
         nav {
-            background-image: url("pattern.png");
+            background-image: url("{{asset('pattern.png')}}");
         }
 
+        .clear { display: table-cell; }
     </style>
 
     <!--[if lt IE 9]>
@@ -32,10 +34,17 @@
     <![endif]-->
 
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-74246203-1', 'auto');
         ga('send', 'pageview');
@@ -55,18 +64,21 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href=""><i class="fa fa-random fa-fw fa-lg"></i> Raffle Draw</a>
+            <a class="navbar-brand" href="{{url('')}}"><i class="fa fa-random fa-fw fa-lg"></i> Raffle Draw</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 {{--<li>--}}
-                    {{--<a href="about"><i class="fa fa-fw fa-info"></i> About</a>--}}
+                {{--<a href="about"><i class="fa fa-fw fa-info"></i> About</a>--}}
                 {{--</li>--}}
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href=""><i class="fa fa-fw fa-clock-o"></i> {{\Carbon\Carbon::now()->format('D j M Y H:i:s e')}}</a>
+                <li><a href=""><i class="fa fa-fw fa-clock-o"></i> {{\Carbon\Carbon::now()->format('D j M Y H:i:s e')}}
+                    </a>
                 </li>
-                <li><a href=""><small>{{env('APP_VERSION','0.?')}}</small></a></li>
+                <li><a href="">
+                        <small>{{env('APP_VERSION','0.?')}}</small>
+                    </a></li>
             </ul>
         </div>
 

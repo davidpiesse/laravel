@@ -159,7 +159,8 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        Irazasyed\LaravelIdenticon\ServiceProvider::class,
+        Spatie\Backup\BackupServiceProvider::class,
     ],
 
     /*
@@ -207,8 +208,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Flash' => Laracasts\Flash\Flash::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
-        'Hashids' => Vinkla\Hashids\Facades\Hashids::class
-
+        'Hashids' => Vinkla\Hashids\Facades\Hashids::class,
+        'Identicon'  => Irazasyed\LaravelIdenticon\Facade::class,
     ],
 
 ];

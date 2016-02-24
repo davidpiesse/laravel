@@ -12,4 +12,8 @@ class Raffle extends Model
         'result' => 'array',
         'config' => 'object',
     ];
+
+    public function hash(){
+        return \Hashids::connection('main')->encode($this->id);
+    }
 }
