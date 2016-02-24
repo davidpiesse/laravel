@@ -27,7 +27,10 @@ class RaffleController extends Controller
     }
 
     public function widget($hash){
-        //show a widget version of the result
+        $id = Hashids::decode($hash);
+        $raffle = Raffle::find($id[0]);
+        $raffle->hash = $hash;
+        return Helpers::buildWidget($raffle);
     }
 
     public function raffles_by_ip($hash){
