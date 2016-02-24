@@ -13,7 +13,7 @@ use Vinkla\Hashids\Facades\Hashids;
 
 class RaffleController extends Controller
 {
-    public function show($hash, $showImage = false)
+    public function show($hash, $showImage = true)
     {
         $id = Hashids::decode($hash);
         $raffle = Raffle::find($id[0]);
