@@ -26,5 +26,6 @@ class Kernel extends ConsoleKernel
     {
         //run db backup
         $schedule->command('backup:run --only-db')->twiceDaily(6,18);
+        $schedule->command('backup:run')->dailyAt(1);
     }
 }
