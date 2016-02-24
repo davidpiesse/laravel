@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'RaffleDraw Result')
+@section('title', 'RaffleDraw Winner - '. $raffle->result)
 
 @section('content')
     {{--{{dd($raffle)}}--}}

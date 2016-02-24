@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A raffle winner random generator">
-    <meta name="author" content="David Piesse">
+    <meta name="description" content="RaffleDraw Winner Generator">
+    <meta name="author" content="RaffleDraw.online">
     <meta name="keywords" content="RaffleDraw,raffle,random,generator,draw,piesse,mapdev">
     <title>@yield('title', 'RaffleDraw')</title>
 
