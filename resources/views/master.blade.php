@@ -8,10 +8,6 @@
     <meta name="description" content="RaffleDraw Winner Generator">
     <meta name="author" content="RaffleDraw.online">
     <meta name="keywords" content="RaffleDraw,raffle,random,generator,draw,piesse,mapdev">
-    <meta property="og:url" content="http://www.test.com/" />
-    <meta property="og:image" content="http://www.test.com/img/fb-logo.png" />
-    <meta property="og:title" content="Prepaid Phone Cards, low rates for International calls with Lucky Prepay" />
-    <meta property="og:description" content="Cheap prepaid Phone Cards. Low rates for international calls anywhere in the world." />
     <title>@yield('title', 'RaffleDraw')</title>
 
     <!-- Bootstrap Core CSS -->
