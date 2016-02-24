@@ -36,7 +36,11 @@
             @if($showImage)
                 <div class="well well-lg text-center">
                     <link rel="image_src" href="{{route('raffle.image',$raffle->hash())}}" />
-{{--                    <img alt="Embedded Image" src="data:image/png;base64,{{base64_encode(\App\Helpers::buildWidgetImage($raffle))}}" />--}}
+                    <meta property="og:url" content="http://www.test.com/" />
+                    <meta property="og:image" content="http://www.test.com/img/fb-logo.png" />
+                    <meta property="og:title" content="Prepaid Phone Cards, low rates for International calls with Lucky Prepay" />
+                    <meta property="og:description" content="Cheap prepaid Phone Cards. Low rates for international calls anywhere in the world." />
+                    {{--                    <img alt="Embedded Image" src="data:image/png;base64,{{base64_encode(\App\Helpers::buildWidgetImage($raffle))}}" />--}}
                     <img alt="Embedded Image" src="{{route('raffle.image',$raffle->hash())}}" />
                 </div>
             @endif
