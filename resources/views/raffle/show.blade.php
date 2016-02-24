@@ -34,7 +34,9 @@
                 @endif
             </div>
             @if($showImage)
-                <div class="well well-lg text-center">Intervention/Image Here</div>
+                <div class="well well-lg text-center">
+                    <img alt="Embedded Image" src="data:image/png;base64,{{\App\Helpers::buildWidgetImage($raffle)}}" />
+                </div>
             @endif
 
             @if($raffle->comment != "")

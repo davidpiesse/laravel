@@ -18,8 +18,7 @@ class RaffleController extends Controller
         $id = Hashids::decode($hash);
         $raffle = Raffle::find($id[0]);
         $raffle->hash = $hash;
-
-        return view('raffle.show',compact('raffle','showImage','image'));
+        return view('raffle.show',compact('raffle','showImage'));
     }
 
     public function show_image($hash){
