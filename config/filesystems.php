@@ -65,8 +65,5 @@ return [
             'accessToken'=> env('DROPBOX_ID'),
             'clientIdentifier'=> env('DROPBOX_TOKEN')
         ],
-
-
     ],
-
 ];

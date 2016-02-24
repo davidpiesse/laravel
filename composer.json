@@ -22,7 +22,8 @@
     "fzaninotto/faker": "~1.4",
     "irazasyed/laravel-identicon": "~1.1",
     "spatie/laravel-backup": "^2.9",
-    "league/flysystem-dropbox": "^1.0"
+    "league/flysystem-dropbox": "^1.0",
+    "intervention/image": "^2.3"
   },
   "require-dev": {
     "mockery/mockery": "0.9.*",

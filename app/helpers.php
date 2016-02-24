@@ -23,4 +23,34 @@ class Helpers{
     public static function decodeIP($hash){
         return Hashids::connection('iphasher')->decode($hash);
     }
+
+    public static function buildWidgetImage($raffle){
+        $img = Image::make('fb_bg.png');
+        $img->insert('trophy_fb_widget.png', 'left', 15, 0);
+        $img->text('raffledraw.online/'.$raffle->hash(), 235, 210, function($font) {
+            $font->file(storage_path().'/OpenSans-Regular.ttf');
+            $font->size(24);
+            $font->color('#fdf6e3');
+            $font->align('center');
+            $font->valign('top');
+        });
+        $img->text('The winner is', 290, 40, function($font) {
+            $font->file(storage_path().'/OpenSans-Regular.ttf');
+            $font->size(20);
+            $font->color('#fdf6e3');
+            $font->align('center');
+            $font->valign('top');
+        });
+        //customise this base on multiple values -
+        //maximum number showm (9)?
+        //-have row pixel y offset predetermined
+        $img->text($raffle->result, 290, 100, function($font) {
+            $font->file(storage_path().'/OpenSans-Regular.ttf');
+            $font->size(48);
+            $font->color('#e74c3c');
+            $font->align('center');
+            $font->valign('top');
+        });
+        return $img->response('jpg');
+    }
 }
