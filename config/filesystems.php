@@ -62,8 +62,8 @@ return [
 
         'dropbox' => [
             'driver' => 'dropbox',
-            'accessToken'=> env('DROPBOX_TOKEN'),
-            'clientIdentifier'=> env('DROPBOX_ID')
+            'accessToken'=> env('DROPBOX_ID'),
+            'clientIdentifier'=> env('DROPBOX_TOKEN')
         ],
 
 
