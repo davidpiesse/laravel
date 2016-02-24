@@ -26,6 +26,7 @@ class Helpers
 
     public static function decodeIP($hash)
     {
+        dd($hash,Hashids::connection('iphasher')->decode($hash) );
         return Hashids::connection('iphasher')->decode($hash);
     }
 
