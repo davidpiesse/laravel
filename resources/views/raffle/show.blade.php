@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'RaffleDraw Winner - '. $raffle->result)
+@section('title', 'RaffleDraw Winner - '. \App\Helpers::resultToString($raffle->result))
 
 @section('content')
     {{--{{dd($raffle)}}--}}
@@ -13,7 +13,7 @@
             </h2>
             <div class="well well-lg text-center">
                 @if($raffle->winners == 1)
-                    The winner was No. <span class="text-success lead"><b>{{$raffle->result}}</b></span>
+                    The winner was No. <span class="text-success lead"><b>{{\App\Helpers::resultToString($raffle->result)}}</b></span>
                 @elseif($raffle->winners > 1)
                     The winners were (in order):
                     <div class="row">
