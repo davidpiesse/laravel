@@ -35,7 +35,7 @@
             </div>
             @if($showImage)
                 <div class="well well-lg text-center">
-                    <link rel="image_src" href="http://stackoverflow.com/images/logo.gif" />
+                    <link rel="image_src" href="{{route('raffle.image',$raffle->hash())}}" />
 {{--                    <img alt="Embedded Image" src="data:image/png;base64,{{base64_encode(\App\Helpers::buildWidgetImage($raffle))}}" />--}}
                     <img alt="Embedded Image" src="{{route('raffle.image',$raffle->hash())}}" />
                 </div>
