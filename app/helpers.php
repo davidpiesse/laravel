@@ -17,7 +17,6 @@ class Helpers
 
     public static function encodeIP($ip)
     {
-        dd($ip);
         if ($ip == "::1")
             $ipArray = [1];
         else
@@ -27,7 +26,6 @@ class Helpers
 
     public static function decodeIP($hash)
     {
-        dd($hash,Hashids::connection('iphasher')->decode($hash) );
         return Hashids::connection('iphasher')->decode($hash);
     }
 

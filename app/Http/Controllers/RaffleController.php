@@ -35,12 +35,10 @@ class RaffleController extends Controller
 
     public function raffles_by_ip($hash){
         $ipAddress = Helpers::decodeIP($hash);
-        dd($ipAddress);
         if(count($ipAddress) > 1)
             $ipAddress = implode('.',$ipAddress);
         else
             $ipAddress = '::1';
-        dd($ipAddress);
         $raffles = Raffle::where('user_ip',$ipAddress)->orderBy('request_time','desc')->get();
 
         return view('user.show',compact('ipAddress','raffles','hash'));
