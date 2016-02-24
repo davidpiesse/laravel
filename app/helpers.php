@@ -17,10 +17,11 @@ class Helpers
 
     public static function encodeIP($ip)
     {
-        if (str_contains('.', $ip))
-            $ipArray = explode(trim($ip), '.', 4);
-        else
+        dd($ip);
+        if ($ip == "::1")
             $ipArray = [1];
+        else
+            $ipArray = explode(trim($ip), '.', 4);
         return Hashids::connection('iphasher')->encode($ipArray);
     }
 
