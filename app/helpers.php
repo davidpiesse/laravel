@@ -2,7 +2,6 @@
 namespace App;
 
 use Illuminate\Support\Facades\Hash;
-use Intervention\Image\Facades\Image;
 use Vinkla\Hashids\Facades\Hashids;
 
 class Helpers{
@@ -26,7 +25,7 @@ class Helpers{
     }
 
     public static function buildWidgetImage($raffle){
-        $img = Image::make('fb_bg.png');
+        $img = \Image::make('fb_bg.png');
         $img->insert('trophy_fb_widget.png', 'left', 15, 0);
         $img->text('raffledraw.online/'.$raffle->hash(), 235, 210, function($font) {
             $font->file(storage_path().'/OpenSans-Regular.ttf');
@@ -52,6 +51,6 @@ class Helpers{
             $font->align('center');
             $font->valign('top');
         });
-        return $img->encode('png');
+        return $img->encode('data-url');
     }
 }
