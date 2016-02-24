@@ -81,6 +81,6 @@ class Helpers{
             $font->align('center');
             $font->valign('top');
         });
-        return $img->encode('png');
+        return $img->response('png');
     }
 }
