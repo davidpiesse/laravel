@@ -2,6 +2,7 @@
 namespace App;
 
 use Illuminate\Support\Facades\Hash;
+use Intervention\Image\Facades\Image;
 use Vinkla\Hashids\Facades\Hashids;
 
 class Helpers{
