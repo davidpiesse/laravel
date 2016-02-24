@@ -20,7 +20,7 @@ class Helpers
         if ($ip == "::1")
             $ipArray = [1];
         else
-            $ipArray = explode(trim($ip), '.');
+            $ipArray = explode('.',trim($ip));
         return Hashids::connection('iphasher')->encode($ipArray);
     }
 
