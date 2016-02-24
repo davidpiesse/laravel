@@ -25,7 +25,13 @@
             background-image: url("{{asset('pattern.png')}}");
         }
 
-        .clear { display: table-cell; }
+        .clear {
+            display: table-cell;
+        }
+
+        .img-responsive {
+            margin: 0 auto;
+        }
     </style>
 
     <!--[if lt IE 9]>
