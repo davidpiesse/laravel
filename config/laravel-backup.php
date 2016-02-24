@@ -28,7 +28,7 @@ return [
         /*
          * Should the database be part of the back up.
          */
-        'backup-db' => false,
+        'backup-db' => true,
     ],
 
     'destination' => [
