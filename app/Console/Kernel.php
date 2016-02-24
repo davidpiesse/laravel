@@ -24,7 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        //run db backup
+        $schedule->command('backup:run --only-db')->twiceDaily(6,18);
     }
 }

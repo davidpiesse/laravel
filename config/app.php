@@ -161,6 +161,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Irazasyed\LaravelIdenticon\ServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
+        \App\Providers\DropboxServiceProvider::class,
     ],
 
     /*

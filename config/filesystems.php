@@ -48,6 +48,7 @@ return [
             'root' => storage_path('app'),
         ],
 
+        //local backup
         'backup' => [
             'driver' => 'local',
             'root' => base_path('backup'),
@@ -57,6 +58,12 @@ return [
             'driver' => 'local',
             'root' => storage_path('app/public'),
             'visibility' => 'public',
+        ],
+
+        'dropbox' => [
+            'driver' => 'dropbox',
+            'accessToken'=> env('DROPBOX_TOKEN'),
+            'clientIdentifier'=> env('DROPBOX_ID')
         ],
 
 
