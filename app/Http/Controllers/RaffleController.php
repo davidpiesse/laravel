@@ -40,7 +40,6 @@ class RaffleController extends Controller
         else
             $ipAddress = '::1';
         $raffles = Raffle::where('user_ip',$ipAddress)->orderBy('request_time','desc')->get();
-
         return view('user.show',compact('ipAddress','raffles','hash'));
     }
 
