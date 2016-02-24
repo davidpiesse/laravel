@@ -74,6 +74,9 @@ class Helpers{
         //customise this base on multiple values -
         //maximum number showm (9)?
         //-have row pixel y offset predetermined
+        //convert to string
+        if(is_array($raffle->result))
+            $raffle->result = implode(',',$raffle->result);
         $img->text($raffle->result, 290, 100, function($font) {
             $font->file(storage_path().'/OpenSans-Regular.ttf');
             $font->size(48);
