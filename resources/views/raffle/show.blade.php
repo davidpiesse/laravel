@@ -35,7 +35,7 @@
             </div>
             @if($showImage)
                 <div class="well well-lg text-center">
-                    <img alt="Embedded Image" src="data:image/png;base64,{{\App\Helpers::buildWidgetImage($raffle)}}" />
+                    <img alt="Embedded Image" src="data:image/png;base64,{{base64_encode(\App\Helpers::buildWidgetImage($raffle))}}" />
                 </div>
             @endif
 
