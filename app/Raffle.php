@@ -11,6 +11,7 @@ class Raffle extends Model
     protected $casts = [
         'result' => 'array',
         'config' => 'object',
+        'custom_array' => 'array'
     ];
 
     public function hash(){

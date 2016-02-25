@@ -80,6 +80,20 @@
                          src="{{route('raffle.image',$raffle->hash())}}"/>
                 </div>
             @endif
+
+            <div class="well">
+                <ul class="social-buttons list-inline text-center">
+                    <li>
+                        <a href="http://www.facebook.com/sharer.php?u={{route('raffle.image',$raffle->hash())}}&t=RaffleDraw" class="socialite facebook-like" data-href="{{route('raffle.image',$raffle->hash())}}" data-send="false" data-layout="box_count" data-width="60" data-show-faces="false" rel="nofollow" target="_blank"><span class="vhidden">Share on Facebook</span></a>
+                    </li>
+                    <li>
+                        <a href="http://twitter.com/share" class="socialite twitter-share" data-text="RaffleDraw" data-url="{{route('raffle.image',$raffle->hash())}}" data-count="vertical" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/share?url={{route('raffle.image',$raffle->hash())}}" class="socialite googleplus-one" data-size="tall" data-href="{{route('raffle.image',$raffle->hash())}}" rel="nofollow" target="_blank"><span class="vhidden">Share on Google+</span></a>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="col-md-2">
         </div>
@@ -90,7 +104,10 @@
 @section('javascript')
     <script>
         $(document).ready(function () {
+            //clipboard -add tooltip
             var clipboard = new Clipboard('.btn');
+            //social
+            Socialite.load();
         });
     </script>
 @endsection

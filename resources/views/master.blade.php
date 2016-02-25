@@ -104,6 +104,7 @@
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdn.jsdelivr.net/socialite/2.1.0/socialite.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.9.0/validator.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.8/clipboard.min.js"></script>
 

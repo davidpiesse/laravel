@@ -14,7 +14,7 @@
                 <table class="table table-striped">
                     <tr>
                         <th class="text-center" width="20%">Raffle ID</th>
-                        <th class="text-center" width="30%">Date / Time</th>
+                        <th class="text-center" width="40%%">Date / Time</th>
                         <th class="text-center">Comment</th>
                     </tr>
                     @foreach($raffles as $raffle)
@@ -25,6 +25,7 @@
                     </tr>
                     @endforeach
                 </table>
+                {!! $raffles->links() !!}
             </div>
         </div>
         <div class="col-md-2">

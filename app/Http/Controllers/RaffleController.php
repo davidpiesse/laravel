@@ -39,7 +39,7 @@ class RaffleController extends Controller
             $ipAddress = implode('.',$ipAddress);
         else
             $ipAddress = '::1';
-        $raffles = Raffle::where('user_ip',$ipAddress)->orderBy('request_time','desc')->get();
+        $raffles = Raffle::where('user_ip',$ipAddress)->orderBy('request_time','desc')->simplePaginate(20);
         return view('user.show',compact('ipAddress','raffles','hash'));
     }
 
