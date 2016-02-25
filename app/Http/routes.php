@@ -1,10 +1,6 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::group(['middleware' => ['web']], function () {
+Route::group([], function () {
     Route::get('/', ['as' => 'home.index', 'uses' => 'HomeController@index']);
     Route::group(['middleware' => 'throttle:10'], function () { //10 in 60 seconds
         Route::post('/', ['as' => 'raffle.create', 'uses' => 'RaffleController@create']);
@@ -19,8 +15,7 @@ Route::group(['middleware' => ['web']], function () {
 //
 //});
 
-Route::group(['prefix'=> 'admin'], function () {
-    Route::auth();
+Route::group(['prefix'=> 'admin','middleware' => ['web','auth']], function () {
+//    Route::auth();
     Route::get('/list', ['as' => 'raffle.admin.list', 'uses' => 'RaffleController@admin_list']);
-//    Route::get('/home', 'HomeController@index');
 });
