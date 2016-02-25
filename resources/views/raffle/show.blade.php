@@ -6,7 +6,7 @@
     <meta property="og:image" content="{{route('raffle.image',$raffle->hash())}}"/>
     <meta property="og:image:width" content="470"/>
     <meta property="og:image:height" content="246"/>
-    <meta property="og:title" content="'RaffleDraw '.str_plural('Winner', $raffle->winners).' '. \App\Helpers::resultToString($raffle->result)"/>
+    <meta property="og:title" content="{{'RaffleDraw '.str_plural('Winner', $raffle->winners).' '. \App\Helpers::resultToString($raffle->result)}}"/>
 @endsection
 
 @section('title', 'RaffleDraw '.str_plural("Winner", $raffle->winners).' '. \App\Helpers::resultToString($raffle->result))
