@@ -15,7 +15,7 @@ Route::group([], function () {
 //
 //});
 
-Route::group(['prefix'=> 'admin','middleware' => ['web','auth']], function () {
+Route::group(['prefix'=> 'admin','middleware' => ['web']], function () {
 //    Route::auth();
     Route::get('/list', ['as' => 'raffle.admin.list', 'uses' => 'RaffleController@admin_list']);
 });

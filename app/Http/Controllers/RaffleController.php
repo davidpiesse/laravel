@@ -43,8 +43,10 @@ class RaffleController extends Controller
         return view('user.show',compact('ipAddress','raffles','hash'));
     }
 
-    public function raffles_by_timeframe($start,$end){
+    public function admin_list(){
         //all raffles in a time period
+        $raffles = Raffle::orderBy('request_time','desc')->simplePaginate(100);
+        return view('admin.list',compact('raffles'));
     }
 
     public function create(Request $request)
