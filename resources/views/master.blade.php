@@ -17,6 +17,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//cdn.jsdelivr.net/jquery.cookiecuttr/1.0/cookiecuttr.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <style>
@@ -43,23 +44,6 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                        (i[r].q = i[r].q || []).push(arguments)
-                    }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-74246203-1', 'auto');
-        ga('send', 'pageview');
-
-    </script>
 </head>
 
 <body>
@@ -102,11 +86,38 @@
 
 <!-- jQuery Version 1.11.1 -->
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="//cdn.jsdelivr.net/jquery.cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdn.jsdelivr.net/jquery.cookiecuttr/1.0/jquery.cookiecuttr.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="//cdn.jsdelivr.net/socialite/2.1.0/socialite.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.9.0/validator.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.8/clipboard.min.js"></script>
+
+<script>
+    if (jQuery.cookie('cc_cookie_decline') == "cc_cookie_decline") {
+// do nothing
+    } else {
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-74246203-1', 'auto');
+        ga('send', 'pageview');
+    }
+
+    $(document).ready(function () {
+        $.cookieCuttr();
+    });
+</script>
 
 @yield('javascript')
 

@@ -62,6 +62,16 @@ class RaffleController extends Controller
         $comment = $request->comment;
         $current_dt = Carbon::now();
         $user_ip = request()->ip();
+        //get custom array text and convert lines to array objects
+//        if(isset($request->custom_array)){
+//            //custom raffle
+//            $records = preg_split('/[\r\n]+/', $request->custom_array, -1, PREG_SPLIT_NO_EMPTY);
+//            dd($records);
+//        }
+        //get order_winners if there
+//        if(isset($request->order_winners))
+        $order_winners = isset($request->order_winners);
+
         //make random seed
         $random_seed = random_int(100000000,999999999);
         //setup random seed for this request
@@ -74,6 +84,7 @@ class RaffleController extends Controller
         $raffle->max = $max;
         $raffle->winners = $winners;
         $raffle->comment = $comment;
+        $raffle->order_winners = $order_winners;
         $raffle->type = 'raffle';
         $raffle->random_seed = $random_seed;
 //        $raffle->code = Hashids::connection('validator')->encode($raffle->random_seed);

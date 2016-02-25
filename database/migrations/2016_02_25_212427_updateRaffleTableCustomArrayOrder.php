@@ -12,11 +12,10 @@ class UpdateRaffleTableCustomArrayOrder extends Migration
      */
     public function up()
     {
-        Schema::table('users', function ($table) {
+        Schema::table('raffles', function ($table) {
             $table->text('custom_array')->nullable();
             $table->boolean('order_winners')->default(false);
         });
-
     }
 
     /**
@@ -26,7 +25,7 @@ class UpdateRaffleTableCustomArrayOrder extends Migration
      */
     public function down()
     {
-        Schema::table('users', function ($table) {
+        Schema::table('raffles', function ($table) {
             $table->dropColumn('custom_array', 'order_winners');
         });
     }

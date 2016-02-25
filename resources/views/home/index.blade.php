@@ -8,7 +8,7 @@
         </div>
         <div class="col-md-8">
             <h2 class="text-center text-primary">
-                <i class="fa fa-trophy"></i> Raffle Draw Winner Generator
+                <i class="fa fa-trophy"></i> Raffle Draw Generator
             </h2>
             <p>
                 Running a raffle or pot-luck draw? Use us to not only randomly generate who wins; but also give the

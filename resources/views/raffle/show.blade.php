@@ -31,9 +31,12 @@
                                 @foreach($raffle->result as $key => $winner)
                                     <tr>
                                         <td>
-                                            <span class="text-secondary text-center">{{\App\Helpers::ordinal($key+1)}}
-                                                : </span> <span
-                                                    class="text-success text-center lead"> <b>{{$winner}}</b></span>
+                                            @if($raffle->order_winners)
+                                            <span class="text-secondary text-center">
+                                                {{\App\Helpers::ordinal($key+1)}}
+                                                : </span>
+                                            @endif
+                                            <span class="text-success text-center lead"> <b>{{$winner}}</b></span>
                                         </td>
                                     </tr>
                                 @endforeach
