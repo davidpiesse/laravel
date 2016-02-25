@@ -8,6 +8,10 @@
     <meta name="description" content="RaffleDraw Winner Generator">
     <meta name="author" content="RaffleDraw.online">
     <meta name="keywords" content="RaffleDraw,raffle,random,generator,draw,piesse,mapdev">
+    <meta property="og:site_name" content="RaffleDraw"/>
+    <meta property="og:type" content="website"/>
+    @yield('metatags')
+
     <title>@yield('title', 'RaffleDraw')</title>
 
     <!-- Bootstrap Core CSS -->
