@@ -11,11 +11,7 @@ Route::group([], function () {
     Route::get('/user/{hash2}', ['as' => 'user.raffle.list', 'uses' => 'RaffleController@raffles_by_ip']);
 });
 
-//Route::group(['prefix'=> 'admin', 'middleware'=> ['auth']],function(){
-//
-//});
-
 Route::group(['prefix'=> 'admin','middleware' => ['web']], function () {
 //    Route::auth();
-    Route::get('/list', ['as' => 'raffle.admin.list', 'uses' => 'RaffleController@admin_list']);
+//    Route::get('/list', ['as' => 'raffle.admin.list', 'uses' => 'RaffleController@admin_list']);
 });
