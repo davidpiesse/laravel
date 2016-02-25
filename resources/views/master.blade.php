@@ -95,9 +95,9 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.8/clipboard.min.js"></script>
 
 <script>
-//    if (jQuery.cookie('cc_cookie_decline') == "cc_cookie_decline") {
+    if (jQuery.cookie('cc_cookie_decline') == "cc_cookie_decline") {
 // do nothing
-//    } else {
+    } else {
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function () {
@@ -112,14 +112,10 @@
 
         ga('create', 'UA-74246203-1', 'auto');
         ga('send', 'pageview');
-//    }
+    }
 
     $(document).ready(function () {
-//        $.cookieCuttr({
-//            cookieDiscreetLink: true,
-//            cookiePolicyPage: false,
-//            cookieDiscreetPosition:'bottomright'
-//        });
+        $.cookieCuttr();
     });
 </script>
 
