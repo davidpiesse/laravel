@@ -30,3 +30,4 @@ class UpdateRaffleTableCustomArrayOrder extends Migration
             $table->dropColumn('custom_array', 'order_winners');
         });
     }
+}
