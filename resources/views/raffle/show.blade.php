@@ -100,11 +100,11 @@
                                         {{--check for winner and add star--}}
                                         @if(is_array($raffle->result))
                                             @if(in_array($entrant,$raffle->result))
-                                                <span class="badge"><i class="fa fa-star fa-fw"></i></span>
+                                                <span class="badge"><i class="fa fa-star fa-fw text-warning"></i></span>
                                             @endif
                                         @else
                                             @if($entrant ==$raffle->result)
-                                                <span class="badge"><i class="fa fa-star fa-fw"></i></span>
+                                                <span class="badge"><i class="fa fa-star fa-fw text-warning"></i></span>
                                             @endif
                                         @endif
                                         {{$entrant}}
