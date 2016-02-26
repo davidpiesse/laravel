@@ -6,10 +6,10 @@
     <meta property="og:image:width" content="470"/>
     <meta property="og:image:height" content="246"/>
     <meta property="og:title"
-          content="{{'RaffleDraw '.str_plural('Winner', $raffle->winners).' '. \App\Helpers::resultToString($raffle->result)}}"/>
+          content="{{'RaffleDraw '.str_plural('Winner', $raffle->winners).' '. Helpers::resultToString($raffle->result)}}"/>
 @endsection
 
-@section('title', 'RaffleDraw '.str_plural("Winner", $raffle->winners).' '. \App\Helpers::resultToString($raffle->result))
+@section('title', 'RaffleDraw '.str_plural("Winner", $raffle->winners).' '. Helpers::resultToString($raffle->result))
 
 @section('content')
     {{--{{dd($raffle)}}--}}
@@ -34,7 +34,7 @@
                                         <td>
                                             @if($raffle->order_winners)
                                                 <span class="text-secondary text-center">
-                                                {{\App\Helpers::ordinal($key+1)}}
+                                                {{\Helpers::ordinal($key+1)}}
                                                     : </span>
                                             @endif
                                             <span class="text-success text-center lead"> <b>{{$winner}}</b></span>
@@ -51,8 +51,8 @@
                 <div class="well well-lg text-center">{{$raffle->comment}}</div>
             @endif
             <div class="well well-lg text-center">
-                This raffle was run at {{\Carbon\Carbon::parse($raffle->request_time)->format('D j M Y H:i:s e')}}
-                ({{\Carbon\Carbon::parse($raffle->request_time)->diffForHumans()}})<br>
+                This raffle was run at {{Carbon::parse($raffle->request_time)->format('D j M Y H:i:s e')}}
+                ({{Carbon::parse($raffle->request_time)->diffForHumans()}})<br>
                 It created <b>{{$raffle->winners}}</b> {{str_plural('winner', $raffle->winners)}}
                 @if($raffle->type == 'raffle')
                     between <b>{{$raffle->min}}</b> and <b>{{$raffle->max}}</b>
@@ -60,9 +60,9 @@
 
                 @endif
                 by User <a
-                        href="{{route('user.raffle.list',\App\Helpers::encodeIP($raffle->user_ip))}}">{{\App\Helpers::encodeIP($raffle->user_ip)}}</a>
-                <img src="{{ Identicon::getImageDataUri(\App\Helpers::encodeIP($raffle->user_ip),16,16) }}"
-                     alt="{{\App\Helpers::encodeIP($raffle->user_ip)}}"/>
+                        href="{{route('user.raffle.list',Helpers::encodeIP($raffle->user_ip))}}">{{Helpers::encodeIP($raffle->user_ip)}}</a>
+                <img src="{{ Identicon::getImageDataUri(Helpers::encodeIP($raffle->user_ip),16,16) }}"
+                     alt="{{Helpers::encodeIP($raffle->user_ip)}}"/>
             </div>
             <div class="well well-lg">
                 <div class="row">
@@ -147,11 +147,8 @@
 @section('javascript')
     <script>
         $(document).ready(function () {
-            //clipboard -add tooltip
             var clipboard = new Clipboard('.btn');
-            //social
             Socialite.load();
-
             $('[data-toggle="tooltip"]').tooltip()
         });
     </script>

@@ -101,7 +101,7 @@
                                     </button>
                                     <br>
                             <span class="text-success"><small><em><i
-                                                class="fa fa-fw fa-clock-o"></i> {{\Carbon\Carbon::now()->toAtomString()}}
+                                                class="fa fa-fw fa-clock-o"></i> {{Carbon::now()->toAtomString()}}
                                     </em></small></span>
                                 </div>
                             </div>
@@ -162,7 +162,7 @@
                                     </button>
                                     <br>
                             <span class="text-success"><small><em><i
-                                                class="fa fa-fw fa-clock-o"></i> {{\Carbon\Carbon::now()->toAtomString()}}
+                                                class="fa fa-fw fa-clock-o"></i> {{Carbon::now()->toAtomString()}}
                                     </em></small></span>
                                 </div>
                             </div>

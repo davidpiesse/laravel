@@ -20,7 +20,7 @@
                     @foreach($raffles as $raffle)
                     <tr>
                         <td><a href="{{route('raffle.show',$raffle->hash())}}">{{$raffle->hash()}}</a></td>
-                        <td>{{\Carbon\Carbon::parse($raffle->request_time)->format('D j M Y H:i:s e')}}</td>
+                        <td>{{Carbon::parse($raffle->request_time)->format('D j M Y H:i:s e')}}</td>
                         <td>{{$raffle->comment}}</td>
                     </tr>
                     @endforeach

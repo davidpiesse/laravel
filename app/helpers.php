@@ -114,4 +114,8 @@ class Helpers
             $result = implode(',', $result);
         return $result;
     }
+
+    public static function appVersion(){
+        return env('APP_VERSION','0.?');
+    }
 }

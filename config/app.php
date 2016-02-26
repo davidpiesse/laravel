@@ -213,5 +213,7 @@ return [
         'Hashids' => Vinkla\Hashids\Facades\Hashids::class,
         'Identicon'  => Irazasyed\LaravelIdenticon\Facade::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Helpers' => \App\Helpers::class,
+        'Carbon' => \Carbon\Carbon::class,
     ],
 ];

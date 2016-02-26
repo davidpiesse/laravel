@@ -21,9 +21,9 @@
                     @foreach($raffles as $raffle)
                         <tr>
                             <td><a href="{{route('raffle.show',$raffle->hash())}}">{{$raffle->hash()}}</a></td>
-                            <td>{{\Carbon\Carbon::parse($raffle->request_time)->format('D j M Y H:i:s e')}}</td>
+                            <td>{{Carbon::parse($raffle->request_time)->format('D j M Y H:i:s e')}}</td>
                             <td>{{$raffle->comment}}</td>
-                            <td><a href="{{route('user.raffle.list',\App\Helpers::encodeIP($raffle->user_ip))}}">{{\App\Helpers::encodeIP($raffle->user_ip)}}</a></td>
+                            <td><a href="{{route('user.raffle.list',Helpers::encodeIP($raffle->user_ip))}}">{{Helpers::encodeIP($raffle->user_ip)}}</a></td>
                         </tr>
                     @endforeach
                 </table>
