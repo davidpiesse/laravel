@@ -90,8 +90,9 @@ class Helpers
         //split into columns if > 5?
 
         $i = 64; //top position of string
-        $max_height = 140; //max text pixel height
+        $max_height = 60; //max text pixel height
         $fontsize = round($max_height / (count($strings)), 0);
+        //cahnge chars
         foreach ($strings as $string) {
             $img->text($string, 290, $i, function ($font) use ($fontsize) {
                 $font->file(storage_path() . '/OpenSans-Regular.ttf');

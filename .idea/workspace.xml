@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="872b343f-8d18-49ee-b584-fbc65a753e46" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/raffle/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/raffle/show.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers.php" afterPath="$PROJECT_DIR$/app/helpers.php" />
     </list>
     <ignored path="random.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,8 +53,8 @@
       <file leaf-file-name="RaffleController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RaffleController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9230769">
-              <caret line="126" column="54" selection-start-line="126" selection-start-column="54" selection-end-line="126" selection-end-column="54" />
+            <state vertical-scroll-proportion="-14.115385">
+              <caret line="140" column="32" selection-start-line="140" selection-start-column="32" selection-end-line="140" selection-end-column="32" />
               <folding>
                 <element signature="e#40#56#0#PHP" expanded="true" />
               </folding>
@@ -62,21 +62,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="helpers.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="helpers.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/helpers.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.576923">
-              <caret line="82" column="36" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.34500876">
+              <caret line="94" column="22" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/raffle/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2977233">
-              <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
+            <state vertical-scroll-proportion="-15.692307">
+              <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
               <folding>
                 <marker date="1456491704718" expanded="true" signature="7829:8043" placeholder="..." />
                 <marker date="1456491704718" expanded="true" signature="7851:8042" placeholder="..." />
@@ -122,8 +122,8 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/home/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RaffleController.php" />
-        <option value="$PROJECT_DIR$/app/helpers.php" />
         <option value="$PROJECT_DIR$/resources/views/raffle/show.blade.php" />
+        <option value="$PROJECT_DIR$/app/helpers.php" />
       </list>
     </option>
   </component>
@@ -428,12 +428,6 @@
       <option name="number" value="Default" />
       <updated>1456132670781</updated>
     </task>
-    <task id="LOCAL-00037" summary="Major Show Update">
-      <created>1456265652777</created>
-      <option name="number" value="00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1456265652777</updated>
-    </task>
     <task id="LOCAL-00038" summary="Major Show Update">
       <created>1456265723977</created>
       <option name="number" value="00038" />
@@ -722,7 +716,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456487181409</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Final Update before trying Auth again">
+      <created>1456491830735</created>
+      <option name="number" value="00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1456491830735</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -805,7 +805,8 @@
     <MESSAGE value="Issue Possible Auth" />
     <MESSAGE value="Fixed Auth Issue" />
     <MESSAGE value="Update for Thursday" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update for Thursday" />
+    <MESSAGE value="Final Update before trying Auth again" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Update before trying Auth again" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1157,6 +1158,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/raffle/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.692307">
+          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+          <folding>
+            <marker date="1456491704718" expanded="true" signature="7829:8043" placeholder="..." />
+            <marker date="1456491704718" expanded="true" signature="7851:8042" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.3076925">
@@ -1167,8 +1179,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RaffleController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9230769">
-          <caret line="126" column="54" selection-start-line="126" selection-start-column="54" selection-end-line="126" selection-end-column="54" />
+        <state vertical-scroll-proportion="-14.115385">
+          <caret line="140" column="32" selection-start-line="140" selection-start-column="32" selection-end-line="140" selection-end-column="32" />
           <folding>
             <element signature="e#40#56#0#PHP" expanded="true" />
           </folding>
@@ -1177,20 +1189,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.576923">
-          <caret line="82" column="36" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.34500876">
+          <caret line="94" column="22" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/raffle/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2977233">
-          <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
-          <folding>
-            <marker date="1456491704718" expanded="true" signature="7829:8043" placeholder="..." />
-            <marker date="1456491704718" expanded="true" signature="7851:8042" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
