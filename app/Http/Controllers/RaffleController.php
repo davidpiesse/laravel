@@ -51,66 +51,108 @@ class RaffleController extends Controller
 
     public function create(Request $request)
     {
+//        dd($request->all());
         $this->validate($request,[
-            'min_number' => 'required|integer|min:0|max:999999',
-            'max_number' => 'required|integer|min:0|max:999999',
-            'max_winners' => 'required|integer|min:0|max:999999',
-            'comment' => 'string|between:0,50'
+            'type' => 'required',
         ]);
-        //get request
-        $min = $request->min_number;
-        $max = $request->max_number;
-        $winners = $request->max_winners;
+        //validation
+        switch($request->type){
+            case "raffle":
+                $this->validate($request,[
+                    'min_number' => 'required|integer|min:0|max:999999',
+                    'max_number' => 'required|integer|min:0|max:999999',
+                    'max_winners' => 'required|integer|min:0|max:999999',
+                    'comment' => 'string|between:0,50'
+                ]);
+                break;
+            case "custom":
+                $this->validate($request,[
+                    'custom_array' => 'required|string',
+                    'custom_max_winners' => 'required|integer|min:0|max:999999',
+                    'comment' => 'string|between:0,50'
+                ]);
+                break;
+        }
+
         $comment = $request->comment;
         $current_dt = Carbon::now();
         $user_ip = request()->ip();
-        //get custom array text and convert lines to array objects
-//        if(isset($request->custom_array)){
-//            //custom raffle
-//            $records = preg_split('/[\r\n]+/', $request->custom_array, -1, PREG_SPLIT_NO_EMPTY);
-//            dd($records);
-//        }
-        //get order_winners if there
-//        if(isset($request->order_winners))
         $order_winners = isset($request->order_winners);
-
-        //make random seed
         $random_seed = random_int(100000000,999999999);
-        //setup random seed for this request
         $faker = \Faker\Factory::create();
         $faker->seed($random_seed);
-
         //create object
         $raffle = new Raffle();
-        $raffle->min = $min;
-        $raffle->max = $max;
-        $raffle->winners = $winners;
-        $raffle->comment = $comment;
-        $raffle->order_winners = $order_winners;
-        $raffle->type = 'raffle';
-        $raffle->random_seed = $random_seed;
-//        $raffle->code = Hashids::connection('validator')->encode($raffle->random_seed);
-        $raffle->request_time = $current_dt;
-        $raffle->microtime = microtime(false);
-        $raffle->user_ip = $user_ip;
-        //initial save
-        $raffle->save();
 
-        //now calculate result -single or multiple
-        if($raffle->winners == 1)
-            $raffle->result = $faker->numberBetween($raffle->min, $raffle->max);
-        else{
-            $raffle->result = $faker->randomElements(range($raffle->min, $raffle->max),$raffle->winners);
+        //build object
+        switch($request->type){
+            case "raffle":
+                $min = $request->min_number;
+                $max = $request->max_number;
+                $winners = $request->max_winners;
+
+                $raffle->min = $min;
+                $raffle->max = $max;
+                $raffle->winners = $winners;
+                $raffle->comment = $comment;
+                $raffle->order_winners = $order_winners;
+                $raffle->type = 'raffle';
+                $raffle->random_seed = $random_seed;
+                $raffle->request_time = $current_dt;
+                $raffle->microtime = microtime(false);
+                $raffle->user_ip = $user_ip;
+                $raffle->save();
+
+                break;
+            case "custom":
+                $custom_array = explode("\n", str_replace("\r", "", $request->custom_array));
+                foreach($custom_array as $key => $entry){
+                    if($entry == "")
+                        array_pull($custom_array,$key);
+                }
+                $custom_array = array_values($custom_array);
+                //convert to array object...
+                $winners = $request->custom_max_winners;
+                //double check winners v entrants?
+                if(count($custom_array) <= $winners)
+                    abort(404); //return error
+
+                $raffle->winners = $winners;
+                $raffle->custom_array = $custom_array;
+                $raffle->comment = $comment;
+                $raffle->order_winners = $order_winners;
+                $raffle->type = 'custom';
+                $raffle->random_seed = $random_seed;
+                $raffle->request_time = $current_dt;
+                $raffle->microtime = microtime(false);
+                $raffle->user_ip = $user_ip;
+                $raffle->save();
+                break;
         }
-        $raffle->save();
+
+        //calc result
+        switch($raffle->type){
+            case "raffle":
+                if($raffle->winners == 1)
+                    $raffle->result = $faker->numberBetween($raffle->min, $raffle->max);
+                else{
+                    $raffle->result = $faker->randomElements(range($raffle->min, $raffle->max),$raffle->winners);
+                }
+                $raffle->save();
+                break;
+            case "custom":
+                //now calculate result -single or multiple
+                if($raffle->winners == 1)
+                    $raffle->result = $faker->randomElement($raffle->custom_array);
+                else{
+                    $raffle->result = $faker->randomElements($raffle->custom_array,$raffle->winners);
+                }
+                $raffle->save();
+                break;
+        }
 
         $hash = Hashids::encode($raffle->id);
 
-        //validate the data
-        //create raffle object
-        //save raffle object
-        //return raffle object page
         return redirect()->route('raffle.show',$hash);
-//        return $this->show($hash);
     }
 }
